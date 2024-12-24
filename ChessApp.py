@@ -126,7 +126,7 @@ class ChessApp:
 
         if self.board.piece_at(square) and self.board.piece_at(square).color == self.board.turn:
             self.selected_square = square
-        else:
+        elif self.selected_square is not None:
             move = chess.Move(self.selected_square, square)
             if move in self.board.legal_moves:
                 self.board.push(move)
